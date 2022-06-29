@@ -15,6 +15,14 @@ public class utilitarios {
 		
 	}
 	
+	
+	public static void delayDaTelaSemTexto(Long tempoDeDelay) throws InterruptedException {
+		
+			Thread.sleep(tempoDeDelay);
+		
+	}
+
+	
 	public static void limpaTela() {
 		for(int i = 0; i < 100; i++)
 		{
@@ -23,7 +31,19 @@ public class utilitarios {
 	}
 	
 	
-	
+	public static void sairDoSistema() throws InterruptedException{
+		
+		long temposDeDelay = 8000;
+		
+		delayDaTelaSemTexto(temposDeDelay);
+		limpaTela();
+		
+		System.out.println("-----   Sistema Bancario Encerrado, Obrigado!   -----");
+		
+		delayDaTelaSemTexto(temposDeDelay);
+		limpaTela();
+		
+	}
 	
 
 }
