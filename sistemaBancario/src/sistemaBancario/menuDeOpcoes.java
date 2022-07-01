@@ -1,6 +1,8 @@
 package sistemaBancario;
 
 import java.util.Scanner;
+import java.util.function.ToDoubleFunction;
+import java.util.function.ToIntFunction;
 
 public class menuDeOpcoes {
 	
@@ -55,15 +57,36 @@ public class menuDeOpcoes {
 		
 	}
 	
-	public void sacarDinheiro() {
+	public double sacarDinheiro(double valorEmConta) {
+		
+		System.out.print("Digite o valor que deseja sacar: R$");
+		valorTotalNaConta = leitor.nextInt();	
+		
+		double novoSaldo = valorEmConta - valorTotalNaConta;
+		
+		if(novoSaldo < 0) {
+			
+			System.out.println("Valor para Saque invalido(Sua conta ficará negativa!)");
+			return valorEmConta;
+			
+		}else {
+			
+			System.out.println("Saque realizado com sucesso, o novo valor da sua conta é R$" + novoSaldo);
+			return novoSaldo;
+			
+		}
 		
 	}
 	
-	public void depositarDinheiro() {
+	public double depositarDinheiro(double valorDepositado) {
+		
+		return valorDepositado;
 		
 	}
 	
 	public void solicitarEmprestimo() {
+		
+		
 		
 	}
 	
@@ -75,27 +98,31 @@ public class menuDeOpcoes {
 	
 	public int verificaOpcaoDigitada(int numeroDigitado) throws InterruptedException {
 		
-		if(numeroDigitado == 1) {
+		if(numeroDigitado == 1) { // Saldo
 			
 			return verificarSaldo(valorTotalNaConta);
 			
-		}else if(numeroDigitado == 2){
+		}else if(numeroDigitado == 2){ //Extrato
 			
 			return numeroDigitado;
 			
-		}else if(numeroDigitado == 3){
+		}else if(numeroDigitado == 3){ //Saque
+			
+			//Não da para retornar pois é do tipo Double(Tratará moedas)
 			
 			return numeroDigitado;
 			
-		}else if(numeroDigitado == 4){
+		}else if(numeroDigitado == 4){ //Depósitos
+			
+			//Não da para retornar pois é do tipo Double(Tratará moedas)
 			
 			return numeroDigitado;
 			
-		}else if(numeroDigitado == 5){
+		}else if(numeroDigitado == 5){ //Empréstimos
 			
 			return numeroDigitado;
 			
-		}else if(numeroDigitado == 6){
+		}else if(numeroDigitado == 6){ //Sair
 			
 			sairDaConta();
 			return numeroDigitado;
@@ -105,6 +132,11 @@ public class menuDeOpcoes {
 			return 0;
 			
 		}
+	}
+
+	private void ToIntFunction(double sacarDinheiro) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

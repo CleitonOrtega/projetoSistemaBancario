@@ -16,7 +16,7 @@ public class menuPrincipal{
 		int numeroDaOpcao = 0;
 		int armazenarNumeroDigitado;
 		
-		double saldoTotal = 10;
+		double saldoTotal = 100;
 		
 		chamarMenuInicial(tempoDoDelayPadrao);
 		
@@ -33,6 +33,13 @@ public class menuPrincipal{
 			numeroDaOpcao = menuOpcoes.verificaOpcaoDigitada(armazenarNumeroDigitado);
 			System.out.println(numeroDaOpcao);
 			
+			if(numeroDaOpcao == 3) {
+				
+				saldoTotal = menuOpcoes.sacarDinheiro(saldoTotal);
+				
+			}else {
+				
+			}
 			
 		}while(numeroDaOpcao != 6);
 		
